@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { selectors } from './redux/store';
 
 export const Basket = () => {
-  const items = useSelector(state => state.basket.items);
+  // const items = useSelector(state => state.basket.items);
+  const items = useSelector(selectors.getBasketItems);
 
   return (
     <div className="Basket">

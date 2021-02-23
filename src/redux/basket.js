@@ -2,13 +2,21 @@ const ADD = 'ADD';
 
 export const actions = {
   addGood: (good) => ({ type: ADD, good }),
+};
+
+export const selectors = {
+  getItems: basket => basket.items,
 }
+
 
 const initialBasket = {
   items: [],
 };
 
-const basketReducer = (basket = initialBasket, action) => {
+const basketReducer = (
+  basket = initialBasket,
+  action
+) => {
   switch (action.type) {
     case ADD:
       return {
